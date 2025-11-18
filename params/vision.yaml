@@ -1,0 +1,12 @@
+
+controller:
+  loop_rate: 10.0
+  control_time_step: 0.3
+  prediction_horizon: 4.0
+  ctrl_publish_type: 'Sequence'
+
+  VisionFollower:
+    control_horizon: 3
+    tolerance: 0.2
+
+
