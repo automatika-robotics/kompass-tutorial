@@ -5,7 +5,7 @@
 1. The easiest way to get started is to get the docker container with all simulation and tutorial resources already installed:
 
 ```shell
-docker pull <IMAGE_NAME>
+docker pull ghcr.io/automatika-robotics/kompass-tutorials:humble
 ```
 
 2. Run your contaier with DISPLAY access (to launch the simulator GUI)
