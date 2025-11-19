@@ -13,7 +13,7 @@ docker pull ghcr.io/automatika-robotics/kompass-tutorials:humble
 
 ```shell
 xhost +
-docker run --name=kompass-demos -it --group-add video --volume=/tmp/.X11-unix:/tmp/.X11-unix  --env="DISPLAY=$DISPLAY" kompass-tutorials:humble
+docker run --name=kompass-demos -it --group-add video --volume=/tmp/.X11-unix:/tmp/.X11-unix  --env="DISPLAY=$DISPLAY" ghcr.io/automatika-robotics/kompass-tutorials:humble
 ```
 
 4. To attach to the container run:
