@@ -1,6 +1,5 @@
 import numpy as np
 from agents.components import Vision
-from agents.models import VisionModel
 from agents.config import VisionConfig
 from agents.ros import Topic
 
@@ -22,14 +21,8 @@ config_file = "params/vision.yaml"
 image0 = Topic(name="/image_raw/compressed", msg_type="CompressedImage")
 
 # Select the output topics: detections (and/or trackings)
-detections_topic = Topic(name="detections", msg_type="Detection2D")
+detections_topic = Topic(name="detections", msg_type="Detections")
 
-
-# Configure the Vision Component
-object_detection = VisionModel(
-    name="object_detection",
-    checkpoint="rtmdet_tiny_8xb32-300e_coco",
-)
 
 # Select the vision component configuration
 detection_config = VisionConfig(
@@ -42,7 +35,6 @@ vision = Vision(
     outputs=[detections_topic],
     trigger=image0,
     config=detection_config,
-    model_client=object_detection,
     component_name="detection_component",
 )
 

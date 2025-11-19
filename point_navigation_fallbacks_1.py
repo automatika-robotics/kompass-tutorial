@@ -67,9 +67,6 @@ else:
 driver.outputs(robot_command=Topic(name="/cmd_vel", msg_type=cmd_msg_type))
 
 
-clicked_point = Topic(name="/clicked_point", msg_type="PointStamped")
-planner.inputs(goal_point=clicked_point)
-
 # Setup the launcher
 launcher = Launcher(config_file=config_file)
 

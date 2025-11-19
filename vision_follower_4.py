@@ -14,7 +14,6 @@ from kompass.components import DriveManager, Controller, ControllerConfig
 from kompass.config import RobotConfig
 from kompass.launcher import Launcher
 
-from agents.models import VisionModel
 from agents.config import VisionConfig
 from agents.ros import Topic
 from agents.components import Vision
@@ -30,17 +29,12 @@ detections_topic = Topic(name="detections", msg_type="Detections")
 # This component will detect objects in image0 topic and publish the results to the detections topic
 detection_config = VisionConfig(threshold=0.5, enable_local_classifier=True, device_local_classifier="cpu")
 
-object_detection = VisionModel(
-    name="object_detection",
-    checkpoint="rtmdet_tiny_8xb32-300e_coco",
-)
 
 vision = Vision(
     inputs=[image0],
     outputs=[detections_topic],
     trigger=image0,
     config=detection_config,
-    # model_client=roboml_detection,
     component_name="agents_detection_component",
 )
 

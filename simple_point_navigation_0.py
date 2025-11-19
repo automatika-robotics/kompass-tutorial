@@ -52,10 +52,6 @@ controller.algorithm = ControllersID.DWA
 controller.direct_sensor = False
 
 
-# clicked_point = Topic(name="/clicked_point", msg_type="PointStamped")
-# planner.inputs(goal_point=clicked_point)
-
-
 # Serving the global map
 map_topic = Topic(name="map", msg_type="OccupancyGrid")
 
