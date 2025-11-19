@@ -24,25 +24,35 @@ docker exec -it kompass-demos bash
 
 5. To start the test simulation, attach to the container and run:
 
-`source ros_ws/install/setup.bash && ros2 launch kompass_sim webots_turtlebot3.launch.py`
+```shell
+source ros_ws/install/setup.bash && ros2 launch kompass_sim webots_turtlebot3.launch.py
+```
 
 Press 'Y/y' to install Webots on the first run.
 
 6. To start a recipe, attach to the container and run:
 
-`source ros_ws/install/setup.bash && cd /kompass-tutorial && python3 <recipe_file>`
+```shell
+source ros_ws/install/setup.bash && cd /kompass-tutorial && python3 <recipe_file>
+```
 
 
 ## To inspect the system in ROS2:
 
 - To see the available ROS2 nodes after running a recipe, attache to the container and run:
 
-`source ros_ws/install/setup.bash && ros2 node list`
+```shell
+source ros_ws/install/setup.bash && ros2 node list
+```
 
 - To see the available ROS2 topics after running a recipe, attache to the container and run:
 
-`source ros_ws/install/setup.bash && ros2 topic list`
+```shell
+source ros_ws/install/setup.bash && ros2 topic list
+```
 
 - To see the a topic's data after running a recipe, attache to the container and run:
 
-`source ros_ws/install/setup.bash && ros2 topic echo <topic_name>`
+```shell
+source ros_ws/install/setup.bash && ros2 topic echo <topic_name>
+```
